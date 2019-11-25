@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.css";
+import { initializeIcons } from "office-ui-fabric-react/lib-commonjs/Icons";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+import Header from "./components/header";
+import Footer from "./components/footer";
+import DashboardSide from "./dashboard-side/dashboard-side";
+import DashboardCentral from "./dashboard-central/dashboard-central";
+import "./assets/styles/app.scss";
+
+initializeIcons();
+
+class App extends Component {
+  render() {
+    return (
+      <Router>
+        <div
+          className={`dashboard${this.props.mode === "light" ? " light" : ""}`}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+          <Header />
+          <div className="dashboard-content">
+            <DashboardSide />
+            <Switch>
+              <Route path="/other" render={() => <div>Other</div>} />
+              <Route component={DashboardCentral} />
+            </Switch>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return { mode: state.side.mode };
+};
+
+export default connect(
+  mapStateToProps,
+  null
+)(App);
