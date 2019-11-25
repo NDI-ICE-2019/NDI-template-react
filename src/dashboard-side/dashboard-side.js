@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
+import DashboardCentral from "../dashboard-central/dashboard-central";
 import MovingPane from "./moving-pane";
 import CheckList from "../components/checklist";
 import ChangeMode from "../components/change-mode";
-import DragPanel from "../components/drag-panel";
 
 class DashboardSide extends Component {
   render() {
@@ -13,7 +13,7 @@ class DashboardSide extends Component {
           <MovingPane content={<CheckList />} />
           <MovingPane content={"Text"} />
         </div>
-        <DragPanel />
+        <DashboardCentral />
         <div className="dashboard-side dashboard-right">
           <MovingPane content={<ChangeMode />} />
           <MovingPane />

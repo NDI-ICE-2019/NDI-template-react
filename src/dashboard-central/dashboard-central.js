@@ -3,7 +3,11 @@ import { connect } from "react-redux";
 
 class DashboardCentral extends Component {
   render() {
-    return <div className="dashboard-central">Dashboard central</div>;
+    return (
+      <div className="dashboard-central">
+        <div className="dashboard-oveverflow">Dashboard central</div>
+      </div>
+    );
   }
 }
 
@@ -13,7 +17,4 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {};
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(DashboardCentral);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardCentral);
