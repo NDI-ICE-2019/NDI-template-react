@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import DashboardSide from "./dashboard-side/dashboard-side";
-import "./assets/styles/app.scss";
+import "./assets/styles/main.scss";
 
 initializeIcons();
 
