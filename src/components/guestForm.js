@@ -15,8 +15,12 @@ class GuestForm extends Component {
     this.props.openGuestFormDialog(false);
   }
 
-  situationChange = (data) => {
+  situationChange(data) {
     alert(data)
+  }
+
+  submit(data) {
+    alert(JSON.stringify(data))
   }
 
   render() {
@@ -24,15 +28,22 @@ class GuestForm extends Component {
     return (
       <div>
         <Dialog open={open} onClose={this.handleClose} aria-labelledby="form-dialog-title">
-          <DialogTitle id="form-dialog-title">Bienvenu</DialogTitle>
+          <DialogTitle id="form-dialog-title">Bienvenue</DialogTitle>
           <DialogContent>
             <DialogContentText>
               Dans le but de t'aider au mieux nous avons besoin de quelques infos a props de toi, elles ne seront pas stockées par la suite (promis 😁 )
             </DialogContentText>
             <Formik
-              initialValues={{ age: 20, postcode: 3100 }}
+              initialValues={{ age: 20, postcode: 31000, situation: 1, status: 12 }}
+              onSubmit={(values, actions) => {
+                setTimeout(() => {
+                  alert(JSON.stringify(values, null, 2));
+                  this.props.openGuestFormDialog(false)
+                  actions.setSubmitting(false)
+                }, 1000)
+              }}
               validate={values => {
-                const errors = {};
+                const errors = {}
                 if (!values.age) {
                   errors.age = 'Ton age est recquis'
                 } else if (
@@ -50,58 +61,41 @@ class GuestForm extends Component {
                 }
                 return errors
               }}
-              onSubmit={(values, { setSubmitting }) => {
-                setTimeout(() => {
-                  alert(JSON.stringify(values, null, 2));
-                  setSubmitting(false);
-                }, 400);
-              }}
             >
-              {({ isSubmitting }) => (
+              {({ canSubmit, errors, values, form, field }) => (
                 <Form>
                   <Field type="number" name="age" />
                   <ErrorMessage name="age" component="div" />
                   <Field type="text" name="postcode" />
                   <ErrorMessage name="postcode" component="div" />
                   tu es:
-                  <select
-                    name="situation"
-                    onChange={this.situationChange}
-                    style={{ display: 'block' }}
-                  >
-                    <option value="Célibataire">Célibataire</option>
-                    <option value="Concubiné" label="red" >Concubiné</option>
-                    <option value="Marié" label="blue" >Marié</option>
-                    <option value="Pacsé" label="green" >Pacsé</option>
-                  </select>
+                  <Field as="select" name="situation">
+                    <option value={1}>Célibataire</option>
+                    <option value={2} >Concubiné</option>
+                    <option value={3} >Marié</option>
+                    <option value={4} >Pacsé</option>
+                  </Field>
                   et :
-                  <select
-                    name="status"
-                    onChange={this.statusChange}
-                    style={{ display: 'block' }}
-                  >
-                    <option value="Etudiant">Etudiant</option>
-                    <option value="Alternant Contra Pro" >Alternant Contra Pro</option>
-                    <option value="Alternant Contra Apprentissage" >Alternant Contra Apprentissage</option>
-                    <option value="Chomeur" >Chomeur</option>
-                  </select>
-                  <button type="submit" disabled={isSubmitting}>
-                    Submit
-                  </button>
+                  <Field as="select" name="status">
+                    <option value={1}>Etudiant</option>
+                    <option value={2} >Alternant Contra Pro</option>
+                    <option value={3} >Alternant Contra Apprentissage</option>
+                    <option value={4} >Chomage</option>
+                  </Field>
+              <DialogActions>
+                <Button onClick={this.handleClose} color="primary">
+                  Cancel
+            </Button>
+                <Button type ="submit" color="primary">
+                  Subscribe
+            </Button>
+              </DialogActions>
                 </Form>
               )}
             </Formik>
           </DialogContent>
-          <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
-              Cancel
-            </Button>
-            <Button onClick={this.handleClose} color="primary">
-              Subscribe
-            </Button>
-          </DialogActions>
         </Dialog>
-      </div>
+      </div >
     );
   }
 }
