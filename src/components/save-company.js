@@ -181,7 +181,7 @@ class SaveCompany extends Component {
                       <div>
                         <select
                           onChange={event => {}}
-                          style={{ display: "block" }}
+                          className="field-company"
                           {...field}
                         >
                           <option value="" label="Selectionner une catégorie" />
