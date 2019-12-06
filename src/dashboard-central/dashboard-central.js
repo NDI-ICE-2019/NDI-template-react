@@ -2,19 +2,17 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { openGuestFormDialog } from "../actions/guestForm";
 import GuestForm from "../components/guestForm"
+import HomePage from "../components/homePage"
 
 
 class DashboardCentral extends Component {
 
-  componentDidMount(){
-    this.props.openGuestFormDialog(true)
-  }
 
   render() {
     return (
-      <div className="dashboard-central">
+      <div >
+        <HomePage/>
         <GuestForm />
-        <div className="dashboard-oveverflow">Dashboard central</div>
       </div>
     );
   }
