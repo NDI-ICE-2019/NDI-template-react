@@ -17,6 +17,11 @@ function company(state = initialState, action) {
         ...state,
         data: updatedCompany
       };
+    case "FETCH_COMPANY_DATA":
+      let xhr = new XMLHttpRequest();
+      xhr.open("GET", "nas.orriere.com/api/organizations/?format=json");
+      const response = xhr.send();
+      return { response };
     default:
       return state;
   }

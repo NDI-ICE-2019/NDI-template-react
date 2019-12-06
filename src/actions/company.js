@@ -11,3 +11,9 @@ export const saveDataCompany = data => {
     data
   };
 };
+
+export const fetchDataCompany = () => {
+  return {
+    type: "FETCH_COMPANY_DATA"
+  };
+};
