@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/precaritorasor/static/css/main.7de15cfe.chunk.css",
-    "main.js": "/precaritorasor/static/js/main.f4258b78.chunk.js",
-    "main.js.map": "/precaritorasor/static/js/main.f4258b78.chunk.js.map",
-    "runtime~main.js": "/precaritorasor/static/js/runtime~main.c78b43d0.js",
-    "runtime~main.js.map": "/precaritorasor/static/js/runtime~main.c78b43d0.js.map",
-    "static/css/2.22a7d4ef.chunk.css": "/precaritorasor/static/css/2.22a7d4ef.chunk.css",
-    "static/js/2.a08c975d.chunk.js": "/precaritorasor/static/js/2.a08c975d.chunk.js",
-    "static/js/2.a08c975d.chunk.js.map": "/precaritorasor/static/js/2.a08c975d.chunk.js.map",
-    "index.html": "/precaritorasor/index.html",
-    "precache-manifest.fbed8db563a4a8e2ed1a907a89f3732c.js": "/precaritorasor/precache-manifest.fbed8db563a4a8e2ed1a907a89f3732c.js",
-    "service-worker.js": "/precaritorasor/service-worker.js",
-    "static/css/2.22a7d4ef.chunk.css.map": "/precaritorasor/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.7de15cfe.chunk.css.map": "/precaritorasor/static/css/main.7de15cfe.chunk.css.map"
+    "main.css": "/ChiliChunk/precaritorazor/static/css/main.d03bc442.chunk.css",
+    "main.js": "/ChiliChunk/precaritorazor/static/js/main.2424221a.chunk.js",
+    "main.js.map": "/ChiliChunk/precaritorazor/static/js/main.2424221a.chunk.js.map",
+    "runtime~main.js": "/ChiliChunk/precaritorazor/static/js/runtime~main.a8b41428.js",
+    "runtime~main.js.map": "/ChiliChunk/precaritorazor/static/js/runtime~main.a8b41428.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/ChiliChunk/precaritorazor/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.a08c975d.chunk.js": "/ChiliChunk/precaritorazor/static/js/2.a08c975d.chunk.js",
+    "static/js/2.a08c975d.chunk.js.map": "/ChiliChunk/precaritorazor/static/js/2.a08c975d.chunk.js.map",
+    "index.html": "/ChiliChunk/precaritorazor/index.html",
+    "precache-manifest.ba0796a3ecfdad6dc55614d91d4a5e1e.js": "/ChiliChunk/precaritorazor/precache-manifest.ba0796a3ecfdad6dc55614d91d4a5e1e.js",
+    "service-worker.js": "/ChiliChunk/precaritorazor/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/ChiliChunk/precaritorazor/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.d03bc442.chunk.css.map": "/ChiliChunk/precaritorazor/static/css/main.d03bc442.chunk.css.map"
   }
 }
